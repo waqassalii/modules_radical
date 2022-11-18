@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="radical_school.list">
+            <field name="name">Radical School</field>
+            <field name="model">radical_school.radical_school</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="value2"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="radical_school.action_window">
+            <field name="name">Radical School</field>
+            <field name="res_model">radical_school.radical_school</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+
+
+        <!-- Top menu item -->
+        <menuitem name="Radical School" id="radical_school.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Radical School" id="radical_school.menu_1" parent="radical_school.menu_root" sequence="1"/>
+        <!-- actions -->
+        <menuitem name="List" id="radical_school.menu_1_list" parent="radical_school.menu_1" sequence="2"
+                  action="radical_school.action_window"/>
+
+    </data>
+</odoo>

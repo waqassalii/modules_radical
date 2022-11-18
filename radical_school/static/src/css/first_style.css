@@ -1,0 +1,22 @@
+/* for getting border as single line in bottom*/
+.custom_class {
+border-collapse:collapse;
+}
+
+/* have to comment hahah */
+.custom_class tbody tr:nth-of-type(even){
+background-color:#eaeaea;
+}
+/* to add style in specific th use. th:nth-child(2) */
+.custom_class table thead tr th{
+width:155px;
+text-align:center !important;
+vertical-align:middle !important;
+background-color:#3c6478;
+color:white;
+height:50px;
+font-size:1.1em;
+}
+ .custom_class table tbody tr td{
+text-align:center !important;
+}

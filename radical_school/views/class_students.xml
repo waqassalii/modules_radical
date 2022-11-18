@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="class_students_form_view" model="ir.ui.view">
+            <field name="name">class.students</field>
+            <field name="model">class.students</field>
+            <field name="arch" type="xml">
+                <form string="Classes">
+                    <header>
+                            <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancel" options="{'clickable': '1'}"/>
+                            <button name="dell_rec" string="Delete Lines" type="object" class="btn-danger"/>
+                        </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="class_id" placeholder="Select The Class"/>
+                            </h1>
+                        </div>
+                        <group></group>
+                        <notebook>
+                            <page string="Students">
+                            <field name="class_students_line">
+                                <tree editable="bottom">
+                                    <field name="student_name"/>
+                                    <field name="gender"/>
+                                    <field name="age"/>
+                                    <field name="class_name"/>
+                                    <field name="class_student_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="class_students_tree_view" model="ir.ui.view">
+            <field name="name">class.students</field>
+            <field name="model">class.students</field>
+            <field name="arch" type="xml">
+                <tree string="School Classes">
+                    <field name="class_id"/>
+                    <field name="state" widget="badge" decoration-success="state == 'confirmed'" decoration-info="state not in ('confirmed')"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="class_students_menu_act_window" model="ir.actions.act_window">
+            <field name="name">School Classes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">class.students</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    All the classes' Rec is available here.
+                </p>
+            </field>
+        </record>
+
+f
+        <menuitem name="Class Students"
+                  id="class_students_menu"
+                  parent="radical_school_config_menu"
+                  action="class_students_menu_act_window" sequence="3"/>
+
+    </data>
+</odoo>

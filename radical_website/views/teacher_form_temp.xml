@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <template id="teacher_form_template_id">
+            <t t-call="website.layout">
+                <title>Radical Teachers</title>
+                <div class="container">
+                    <t t-foreach="teacher_forms" t-as="teacher">
+                        <a t-attf-href="/radical/teacher/#{teacher.id}"><h2><t t-esc="teacher.name"/></h2></a>
+                    </t>
+                </div>
+
+            </t>
+        </template>
+        <template id="teacher_form_single_template_id">
+            <t t-call="website.layout">
+                <title>Radical Teachers</title>
+                <div class="container">
+                    <t t-foreach="teacher_form" t-as="teacher">
+                        <h2><t t-esc="teacher.name"/></h2>
+                        <h2><t t-esc="teacher.age"/></h2>
+                        <h2><t t-esc="teacher.gender"/></h2>
+                    </t>
+                </div>
+
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <template id="report_class_ten_view">
+            <t t-call="web.html_container">
+                <!--                <t t-foreach="docs" t-as="doc">-->
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <link rel="stylesheet" href="/radical_school/static/src/css/bootstrap.css"/>
+
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>line#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="i" t-value="0"/>
+                                <t t-foreach="class_ten" t-as="ten">
+                                    <t t-set="i" t-value="i+1"/>
+                                    <t t-set="j" t-value="i%2"/>
+
+                                    <!--style="background-color:#2c3e50"
+                                    style="background-color:#35a185"-->
+                                    <tr t-if="j!=0" class="table-primary">
+                                        <td><t t-esc="i"/></td>
+                                        <td><t t-esc="ten['name']"/></td>
+                                        <td><t t-esc="ten['age']"/></td>
+                                        <td><t t-esc="ten['gender']"/></td>
+                                        <td><t t-esc="ten['date']"/></td>
+                                    </tr>
+                                    <tr t-if="j==0" class="table-danger">
+                                        <td><t t-esc="i"/></td>
+                                        <td><t t-esc="ten['name']"/></td>
+                                        <td><t t-esc="ten['age']"/></td>
+                                        <td><t t-esc="ten['gender']"/></td>
+                                        <td><t t-esc="ten['date']"/></td>
+                                    </tr>
+
+
+
+
+
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+                <!--                </t>-->
+            </t>
+        </template>
+
+
+
+
+        <!--<report
+                id="report_class_ten_action_id"
+                model="class.ten"
+                string="Class Ten Report"
+                name="radical_school.report_class_ten_view"
+                file="radical_school.report_class_ten"
+                report_type="qweb-pdf"/>-->
+        <record id="action_report_class_ten" model="ir.actions.report">
+            <field name="name">Class Ten Report</field>
+            <field name="model">class.ten.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">radical_school.report_class_ten_view</field>
+            <field name="report_file">radical_school.report_class_ten</field>
+            <field name="binding_model_id" ref="model_class_ten_wizard"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+
+    </data>
+</odoo>

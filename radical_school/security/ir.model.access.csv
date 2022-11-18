@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_admission_form,admission_form,model_admission_form,base.group_user,1,1,1,1
+access_admission_form_line,admission_form_line,model_admission_form_line,base.group_user,1,1,1,1
+access_radical_school_radical_school,radical_school.radical_school,model_radical_school_radical_school,base.group_user,1,1,1,1
+access_teacher_teacher,teacher_teacher.radical_school,model_teacher_teacher,base.group_user,1,1,1,1
+access_class_ten,class_ten,model_class_ten,base.group_user,1,1,1,1
+access_class_ten_wizard,class_ten_wizard,model_class_ten_wizard,base.group_user,1,1,1,1
+access_duplicate_admission_form,duplicate.admission.form,model_duplicate_admission_form,base.group_user,1,1,1,1
+access_duplicate_admission_form_line,duplicate.admission.form line,model_duplicate_admission_form_line,base.group_user,1,1,1,1
+access_school_classes,school_classes,model_school_classes,base.group_user,1,1,1,1
+access_class_students,class_students,model_class_students,base.group_user,1,1,1,1
+access_class_students_line,class_students_line,model_class_students_line,base.group_user,1,1,1,1

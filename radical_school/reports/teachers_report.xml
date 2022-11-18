@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="report_teacher_teacher_view_ext">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="jok">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Age</th>
+                                                <th>Class</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="jok.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="jok.age"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="jok.class_name"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_teacher_teacher_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Age</th>
+                                                <th>Class</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                            <tr>
+                                                <td>
+                                                    <span t-esc="doc.name"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.age"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="doc.class_name"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Age</th>
+                                                <th>Class</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                            <t t-foreach="request.env['admission.form'].search([])" t-as="obj">
+                                                <tr>
+                                                    <td>
+                                                        <span t-esc="obj.name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="obj.age"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="obj.class_name"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <t t-set="admission" t-value="doc.get_admission_data()"/>
+                                            <t t-foreach="admission" t-as="o">
+
+                                                <tr>
+                                                    <td>
+                                                        <span t-esc="o.name"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="o.age"/>
+                                                    </td>
+                                                    <td>
+                                                        <span t-esc="o.class_name"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <t t-call="radical_school.report_teacher_teacher_view_ext"/>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+
+
+        <report
+                id="report_ModelName"
+                model="teacher.teacher"
+                string="Teacher Report"
+                name="radical_school.report_teacher_teacher_view"
+                file="radical_school.report_teacher_teacher"
+                report_type="qweb-pdf"/>
+
+    </data>
+</odoo>

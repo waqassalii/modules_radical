@@ -1,0 +1,70 @@
+<odoo>
+  <data>
+    <!--template for designing-->
+
+    <!--list view-->
+    <record model="ir.ui.view" id="class_ten_form_list">
+      <field name="name">class_ten</field>
+      <field name="model">class.ten</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="date"/>
+          <field name="name"/>
+          <field name="gender"/>
+          <field name="age"/>
+          <field name="id_card"/>
+        </tree>
+      </field>
+    </record>
+    <!--form view -->
+    <record model="ir.ui.view" id="class_ten_form_form">
+      <field name="name">class_ten</field>
+      <field name="model">class.ten</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled" options="{'clickable': '1'}"/>
+            <button name="%(radical_school.action_class_ten_wizard)d" string="Print Report" type="action"
+                    class="btn-secondary btn-sm"/>
+
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <div>
+                  <label for="name" string="Student Name"/>
+                  <h1>
+                    <field name="name"/>
+                  </h1>
+                </div>
+              </group>
+              <group>
+                <field name="image" class="oe_avatar" widget="image" nolabel="1"/>
+              </group>
+
+            </group>
+            <group>
+              <field name="age"/>
+              <field name="gender"/>
+              <field name="id_card"/>
+              <field name="phone" widget="phone"/>
+              <field name="date"/>
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_class_ten_from">
+      <field name="name">Class 10</field>
+      <field name="res_model">class.ten</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Class 10" id="class_ten_menu_id" parent="radical_school.menu_1" sequence="4"
+              action="action_class_ten_from"/>
+
+  </data>
+</odoo>

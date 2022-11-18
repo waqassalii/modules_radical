@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="admission_form_template_id">
+            <t t-call="website.layout">
+                <title>Admission Forms</title>
+                <div class="container">
+                    <t t-foreach="admissions" t-as="st">
+                        <ul>
+                            <li>
+                                <a t-attf-href="/radical/admission/#{slug(st)}"><t t-esc="st.student_name"/></a>
+<!--                                <a t-attf-href="/radical/admission/{{slug(admission)}}"><t t-esc="st.student_name"/></a>-->
+                            </li>
+
+                        </ul>
+                    </t>
+
+                </div>
+
+            </t>
+        </template>
+        <template id="admission_form_single_template_id">
+            <t t-call="website.layout">
+                <title>Admission Form of This Student</title>
+                <div class="container">
+                        <ul>
+                            <li>
+                                <t t-esc="admission.student_name"/>
+                                <t t-esc="admission.age"/>
+                                <t t-esc="admission.gender"/>
+                            </li>
+
+                        </ul>
+                </div>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

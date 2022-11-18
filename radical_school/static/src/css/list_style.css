@@ -1,0 +1,23 @@
+.tree_custom table thead tr th{
+width:155px;
+text-align:center !important;
+vertical-align:middle !important;
+background-color:#556e8d;
+color:white;
+height:50px;
+font-size:1.1em;
+}
+.tree_custom table tbody tr td{
+text-align:center !important;
+}
+.tree_custom table tbody tr:nth-child(odd){
+background-color:#dcf6dc;
+}
+.tree_custom table tbody tr:nth-child(even){
+background-color:#d2e3ef;
+}
+.tree_custom table tbody tr:hover {
+  background-color: #3c99dc;
+  font-size:18px;
+}
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="menu_website_radical_child" model="website.menu">
+            <field name="name">Radicals</field>
+            <field name="url">/radicals</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">14</field>
+        </record>
+        <record id="radical_page" model="website.page">
+            <field name="url">/radicals</field>
+            <field name="is_published">True</field>
+            <field name="website_indexed" eval="False"/>
+            <field name="name">Radicals</field>
+            <field name="type">qweb</field>
+            <field name="key">website.accessories</field>
+            <field name="arch" type="xml">
+                <t name="Home Page" t-name="website.radical_page">
+                    <t t-call="website.layout">
+                        <h2>hellow world im here to pass every test</h2>
+                        <a href="http://localhost:8014/">Click here to go to home</a>
+                    </t>
+                </t>
+            </field>
+        </record>
+       <!-- <record id="menu_website_radical_child_2" model="website.menu">
+            <field name="name">Radicals</field>
+            <field name="url">/radical2</field>
+            <field name="parent_id" ref="menu_website_radical_child"/>
+            <field name="sequence" type="int">3</field>
+        </record>-->
+
+    </data>
+</odoo>
