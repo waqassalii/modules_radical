@@ -52,15 +52,15 @@
                 </p>
             </field>
         </record>
-        <menuitem name="Configuration"
+     <!--   <menuitem name="Configuration"
                   id="radical_school_config_menu"
                   parent="radical_school.menu_root"
                   sequence="5"/>
 
         <menuitem name="School Classes"
                   id="school_classes_menu"
-                  parent="radical_school_config_menu"
-                  action="school_classes_menu_act_window" sequence="1"/>
+                  parent="radical_school.menu_root"
+                  action="school_classes_menu_act_window"/>-->
 
     </data>
 </odoo>

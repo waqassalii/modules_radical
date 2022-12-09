@@ -23,13 +23,14 @@ class AdmissionForm(models.Model):
     guardian_phone = fields.Char('Guardian Phone')
     age = fields.Integer(string='Age')
     birth_day = fields.Date('Birth Day')
-    class_id = fields.Many2one('school.classes',string='Class')
+    # class_id = fields.Many2one('school.classes',string='Class')
     previous_class = fields.Integer(string='Previous Class')
     guardian = fields.Char(string='Guardian Name')
     guardian_occupation = fields.Char(string='Guardian Occupation')
     guardian_id_card = fields.Integer(string='Guardian CNIC')
     address = fields.Text('Address')
-
+    uplaod_file = fields.Image(string='upload files', attachment=True,max_width=50, max_height=50, store=True)
+    image_m2m = fields.Many2many('ir.attachment', string="Image")
     admission_form_line = fields.One2many('admission.form.line', 'admission_id', string="Form Line", ondelete='cascade')
 
     def action_send_sms(self):

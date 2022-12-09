@@ -23,6 +23,7 @@
         <form>
           <header>
             <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled" options="{'clickable': '1'}"/>
+            <button name="action_get_month" string="get month" class="btn-primary" type="object"/>
 
           </header>
           <sheet>
@@ -44,12 +45,19 @@
                 <field name="age"/>
                 <field name="class_id"/>
                 <field name="date"/>
+                <field name="plus_date"/>
               </group>
               <group>
                 <field name="id_card"/>
                 <field name="phone" widget="phone" options="{'enable_sms': True}"/>
                 <field name="gender"/>
+                <field name="year"/>
+                <field name="start_quarter"/>
+                <field name="end_quarter"/>
               </group>
+            </group>
+            <group>
+              <field name="note"/>
             </group>
           </sheet>
         </form>
@@ -63,8 +71,10 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Teachers" id="teacher_teacher_menu_id" parent="radical_school.menu_root" sequence="4"
+    <menuitem name="Teachers" id="teacher_teacher_menu_id" parent="radical_school_menu_root" sequence="4"
               action="action_teachers_from"/>
+
+
 
   </data>
 </odoo>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--creating menu in website -->
+        <!--on clicking this menu the given url will be called-->
+        <record id="menu_website_special_class" model="website.menu">
+            <field name="name">Special class</field>
+            <field name="url">/special-class</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">7</field>
+        </record>
+
+        <template id="special_class_templ1" name="Special Class">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+                            <form role="form" action="/create/special-class" method="post">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="form-group">
+                                    <label for="name" class="control-label">Your Name</label>
+                                    <input name="name" type="text" t-att-value="name" id="name" class="form-control"
+                                           placehoder="e.g. Waqas Ali" required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="control-label">Your phone</label>
+                                    <input name="phone" type="text" t-att-value="phone" id="phone" class="form-control"
+                                           placehoder="0300 xxxxx" required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age" class="control-label">Your Age</label>
+                                    <input name="age" type="text" t-att-value="age" id="age" class="form-control"
+                                           placehoder="age" required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender" class="control-label">Your gender</label>
+                                    <input name="gender" type="text" t-att-value="gender" id="gender"
+                                           class="form-control"
+                                           placehoder="gender" required="required"/>
+                                </div>
+                                <div t-attf-class="clearfix oe_login_buttons">
+                                    <button type="submit" class="btn btn-primary">Submit
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+
+        </template>
+        <template id="special_class_thanks" name="Special Class">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure">
+                        <div class="container">
+                             <h3>Thank You!</h3>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Thanks, You got the time in special class
+                                        </div>
+                                        <div class="col-4">
+                                            we will reach you soon
+                                        </div>
+
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+
+        </template>
+
+         <!--<record id="special_class_thanks" model="website.page">
+            <field name="url">/specialclass-thanks</field>
+            <field name="website_published">True</field>
+            <field name="name">Thank you (Recruitment)</field>
+            <field name="type">qweb</field>
+            <field name="key">radical_school.special_thanks</field>
+            <field name="arch" type="xml">
+                <t name="Thank you (Recruitment)" t-name="website_hr_recruitment.thankyou">
+                    <t t-call="website.layout">
+                        <div id="wrap">
+                            <div class="oe_structure">
+                                <div class="container">
+                                    <h3>Thank You!</h3>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Thanks, You the time in special class
+                                        </div>
+                                        <div class="col-4">
+                                            we will reach you soon
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>-->
+
+
+
+
+
+
+
+
+    </data>
+</odoo>
+
+
+
+

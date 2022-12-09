@@ -63,8 +63,8 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Class 10" id="class_ten_menu_id" parent="radical_school.menu_1" sequence="4"
-              action="action_class_ten_from"/>
+<!--    <menuitem name="Class 10" id="class_ten_menu_id" parent="radical_school.menu_1" sequence="4"
+              action="action_class_ten_from"/>-->
 
   </data>
 </odoo>

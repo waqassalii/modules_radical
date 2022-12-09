@@ -106,8 +106,5 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Admission Form" id="admission_duplicate_form_menu" parent="radical_school.menu_1" sequence="1"
-              action="duplicate_action_admission_from"/>
-
   </data>
 </odoo>

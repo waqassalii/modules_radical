@@ -1,10 +1,11 @@
-<odoo>
+<odoo>=
     <data>
         <template id="teacher_form_template_id">
             <t t-call="website.layout">
                 <title>Radical Teachers</title>
                 <div class="container">
                     <t t-foreach="teacher_forms" t-as="teacher">
+                        <!--"/om-menu/#{restaurant.short_name}?id=#{cat.id} if you wan to pas two ids or arguments -->
                         <a t-attf-href="/radical/teacher/#{teacher.id}"><h2><t t-esc="teacher.name"/></h2></a>
                     </t>
                 </div>

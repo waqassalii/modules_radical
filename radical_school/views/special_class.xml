@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <!--template for designing-->
+
+        <!--list view-->
+        <record model="ir.ui.view" id="special_class_list">
+            <field name="name">Special Class</field>
+            <field name="model">special.class</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="phone" widget="phone"/>
+                </tree>
+            </field>
+        </record>
+        <!--form view -->
+        <record model="ir.ui.view" id="special_class_form">
+            <field name="name">Special Class</field>
+            <field name="model">special.class</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="phone" widget="phone"/>
+                        </group>
+
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_special_class">
+            <field name="name">Special Class</field>
+            <field name="res_model">special.class</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Special Class" id="special_class_menu_id" parent="radical_school_menu_root" sequence="5"
+                  action="action_special_class"/>
+
+
+
+    </data>
+</odoo>

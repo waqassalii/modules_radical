@@ -26,10 +26,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
-        'views/radical_main_page.xml',
-        'views/teacher_form_temp.xml',
-        'views/admission_form_template.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!--template for designing-->
+
+    <!--list view-->
+    <record model="ir.ui.view" id="radical_resume_list">
+      <field name="name">Resumes</field>
+      <field name="model">radical.resume</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="phone"/>
+               <!-- <field name="age"/>
+                <field name="gender"/>
+
+                <field name="id_card"/>
+                <field name="education"/>-->
+        </tree>
+      </field>
+    </record>
+    <!--form view -->
+    <record model="ir.ui.view" id="radical_resume_form">
+      <field name="name">Resumes</field>
+      <field name="model">radical.resume</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="phone"/>
+                <field name="id_card"/>
+                <field name="education"/>
+              </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="action_radical_resume">
+      <field name="name">Resumes</field>
+      <field name="res_model">radical.resume</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Resumes" id="radical_resume_menu_id" parent="radical_school_menu_root" sequence="7"
+              action="action_radical_resume"/>
+
+
+
+  </data>
+</odoo>

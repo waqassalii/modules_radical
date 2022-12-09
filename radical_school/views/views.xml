@@ -14,7 +14,7 @@
         </record>
 
         <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="radical_school.action_window">
+        <record model="ir.actions.act_window" id="radical_school_action_window">
             <field name="name">Radical School</field>
             <field name="res_model">radical_school.radical_school</field>
             <field name="view_mode">tree,form</field>
@@ -24,12 +24,12 @@
 
 
         <!-- Top menu item -->
-        <menuitem name="Radical School" id="radical_school.menu_root"/>
+        <menuitem name="Radical School" id="radical_school_menu_root"/>
         <!-- menu categories -->
-        <menuitem name="Radical School" id="radical_school.menu_1" parent="radical_school.menu_root" sequence="1"/>
+        <menuitem name="Radical School" id="radical_school_menu" parent="radical_school_menu_root" sequence="1"/>
         <!-- actions -->
-        <menuitem name="List" id="radical_school.menu_1_list" parent="radical_school.menu_1" sequence="2"
-                  action="radical_school.action_window"/>
+        <menuitem name="List" id="radical_school_menu_child" parent="radical_school_menu" sequence="2"
+                  action="radical_school_action_window"/>
 
     </data>
 </odoo>

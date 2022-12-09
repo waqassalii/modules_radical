@@ -62,10 +62,10 @@
         </record>
 
 f
-        <menuitem name="Class Students"
+       <!-- <menuitem name="Class Students"
                   id="class_students_menu"
-                  parent="radical_school_config_menu"
-                  action="class_students_menu_act_window" sequence="3"/>
+                  parent="radical_school.radical_school_config_menu"
+                  action="class_students_menu_act_window" sequence="3"/>-->
 
     </data>
 </odoo>

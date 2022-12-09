@@ -8,3 +8,5 @@ from . import admission_report_parser
 from . import duplicate_admission_form
 from . import school_classes
 from . import class_students
+from . import special_class
+from . import radical_resume

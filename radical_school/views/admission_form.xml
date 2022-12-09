@@ -1,139 +1,149 @@
 <odoo>
-  <data>
-    <!--template for designing-->
-    <template id="assets_backend" name="Admission Form Asset" inherit_id="web.assets_backend">
-      <xpath expr="." position="inside">
-        <link rel="stylesheet" type="text/css" href="/radical_school/static/src/css/first_style.css"/>
-      </xpath>
-    </template>
-    <!--list view-->
-    <record model="ir.ui.view" id="admission_form_list">
-      <field name="name">Admission Form</field>
-      <field name="model">admission.form</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="student_name"/>
-          <field name="guardian"/>
-          <field name="age"/>
-          <field name="class_id"/>
-        </tree>
-      </field>
-    </record>
-    <!--form view -->
-    <record model="ir.ui.view" id="admission_form_form">
-      <field name="name">Admission Form</field>
-      <field name="model">admission.form</field>
-      <field name="arch" type="xml">
-        <form>
-          <header>
-            <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled" options="{'clickable': '1'}"/>
-            <button id="button_whatsapp" name="action_send_sms" icon="fa-whatsapp"
-                    string="Share Whatsapp" type="object" class="btn-primary"/>
-            <button id="button_confirm" name="action_confirm"
-                    string="Confirm" type="object" class="btn-primary"/>
-            <button id="button_cancelled" name="action_cancel" confirm="Pakki Gall Wa PAA ji"
-                    string="Cancel" type="object"/>
-            <button id="button_draft" name="action_draft"
-                    string="Reset to Draft" type="object" class="btn-primary"/>
-          </header>
-          <sheet>
-
-
-            <!--date and from number-->
-            <group>
-              <group>
-                <div class="oe_title">
-                  <h1>
-                    <field name="name" readonly="1" required="1"/>
-                  </h1>
-                </div>
-              </group>
-              <group>
-                <gorup></gorup>
-                <gorup><div class="oe_title col-4">
-                  <h2><label for="date" string="Date"/></h2>
-                  <h5><field name="date"/></h5>
-                  <div name="options_active"/>
-                </div></gorup>
-              </group>
-            </group>
-
-            <!--name and image-->
-            <div class="text-center" style="text-shadow: 2px 2px 5px red;">
-              <h2 style="font-size: 2.625rem;">Student Information Area</h2>
-            </div>
-
-            <group class="bg-light">
-              <group>
-                <div>
-                  <label for="student_name" string="Student Name"/>
-                  <h2>
+    <data>
+        <!--template for designing-->
+        <template id="assets_backend" name="Admission Form Asset" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css" href="/radical_school/static/src/css/first_style.css"/>
+            </xpath>
+        </template>
+        <!--list view-->
+        <record model="ir.ui.view" id="admission_form_list">
+            <field name="name">Admission Form</field>
+            <field name="model">admission.form</field>
+            <field name="arch" type="xml">
+                <tree>
                     <field name="student_name"/>
-                  </h2>
-                </div>
-              </group>
-              <group>
-                <field name="image" class="oe_avatar" widget="image" nolabel="1"/>
-              </group>
-            </group>
-            <!--all fields-->
-            <group class="bg-light">
-              <group>
-                <field name="age"/>
-                <field name="previous_class"/>
-                <field name="phone" widget="phone"/>
-                <field name="relegion"/>
-              </group>
-              <group>
-                <field name="birth_day"/>
-                <field name="gender"/>
-                <field name="class_id"/>
-                <field name="nationality"/>
-                <field name="address"/>
-              </group>
-            </group>
-            <!--guardian information-->
-            <div class="text-center" style="text-shadow: 2px 2px 5px red;">
-              <h2 style="font-size: 2.625rem;font-family:Fantasy">Guardian Information Area</h2>
-            </div>
-             <group>
-              <group>
-                <field name="guardian"/>
-                <field name="guardian_occupation"/>
-              </group>
-              <group>
-                <field name="guardian_id_card"/>
-                <field name="guardian_phone" widget="phone" options="{'enable_sms':True}"/>
-              </group>
-            </group>
-            <notebook>
-              <page string="Subjects">
-                <field name="admission_form_line">
-                  <tree editable="bottom" class="custom_class" delete="1">
-                    <field name="admission_id" invisible="1"/>
-                    <field name="admission_fee"/>
-                    <field name="semester_fee"/>
-                    <field name="paid_fee"/>
-                    <field name="balance_fee"/>
-                  </tree>
+                    <field name="guardian"/>
+                    <field name="age"/>
+                    <!--          <field name="class_id"/>-->
+                </tree>
+            </field>
+        </record>
+        <!--form view -->
+        <record model="ir.ui.view" id="admission_form_form">
+            <field name="name">Admission Form</field>
+            <field name="model">admission.form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled"
+                               options="{'clickable': '1'}"/>
+                        <button id="button_whatsapp" name="action_send_sms" icon="fa-whatsapp"
+                                string="Share Whatsapp" type="object" class="btn-primary"/>
+                        <button id="button_confirm" name="action_confirm"
+                                string="Confirm" type="object" class="btn-primary"/>
+                        <button id="button_cancelled" name="action_cancel" confirm="Pakki Gall Wa PAA ji"
+                                string="Cancel" type="object"/>
+                        <button id="button_draft" name="action_draft"
+                                string="Reset to Draft" type="object" class="btn-primary"/>
+                    </header>
+                    <sheet>
 
-                </field>
-              </page>
-            </notebook>
-          </sheet>
-        </form>
-      </field>
-    </record>
 
-    <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="action_admission_from">
-      <field name="name">Admission Form</field>
-      <field name="res_model">admission.form</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+                        <!--date and from number-->
+                        <group>
+                            <group>
+                                <div class="oe_title">
+                                    <h1>
+                                        <field name="name" readonly="1" required="1"/>
+                                    </h1>
+                                </div>
+                            </group>
+                            <group>
+                                <gorup></gorup>
+                                <gorup>
+                                    <div class="oe_title col-4">
+                                        <h2>
+                                            <label for="date" string="Date"/>
+                                        </h2>
+                                        <h5>
+                                            <field name="date"/>
+                                        </h5>
+                                        <div name="options_active"/>
+                                    </div>
+                                </gorup>
+                            </group>
+                        </group>
 
-    <menuitem name="Copies of Admission Form" id="radical_school.menu_1_list" parent="radical_school_config_menu" sequence="2"
-              action="action_admission_from"/>
+                        <!--name and image-->
+                        <div class="text-center" style="text-shadow: 2px 2px 5px red;">
+                            <h2 style="font-size: 2.625rem;">Student Information Area</h2>
+                        </div>
 
-  </data>
+                        <group class="bg-light">
+                            <group>
+                                <div>
+                                    <label for="student_name" string="Student Name"/>
+                                    <h2>
+                                        <field name="student_name"/>
+                                    </h2>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="image" class="oe_avatar" widget="image" nolabel="1" />
+                            </group>
+                        </group>
+                        <!--all fields-->
+                        <group class="bg-light">
+                            <group>
+                                <field name="age"/>
+                                <field name="previous_class"/>
+                                <field name="phone" widget="phone"/>
+                                <field name="relegion"/>
+                                <field name="uplaod_file" widget="image" class="tp-photoswipe-img"/>
+                                <field name="image_m2m" widget="many2many_binary"/>
+                            </group>
+                            <group>
+                                <field name="birth_day"/>
+                                <field name="gender"/>
+                                <!--                <field name="class_id"/>-->
+                                <field name="nationality"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                        <!--guardian information-->
+                        <div class="text-center" style="text-shadow: 2px 2px 5px red;">
+                            <h2 style="font-size: 2.625rem;font-family:Fantasy">Guardian Information Area</h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="guardian"/>
+                                <field name="guardian_occupation"/>
+                            </group>
+                            <group>
+                                <field name="guardian_id_card"/>
+                                <field name="guardian_phone" widget="phone" options="{'enable_sms':True}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Subjects">
+                                <field name="admission_form_line">
+                                    <tree editable="bottom" class="custom_class" delete="1">
+                                        <field name="admission_id" invisible="1"/>
+                                        <field name="admission_fee"/>
+                                        <field name="semester_fee"/>
+                                        <field name="paid_fee"/>
+                                        <field name="balance_fee"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="action_admission_from">
+            <field name="name">Admission Form</field>
+            <field name="res_model">admission.form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Admission Form" id="admission_form_menu" parent="radical_school_menu_root" sequence="3"
+                  action="action_admission_from"/>
+
+    </data>
 </odoo>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="11164807-02ff-4224-ac0c-4d9cacc3ba3b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/radical_school/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/models/admission_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/models/admission_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/models/teachers.py" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/models/teachers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/admission_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/admission_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/class_students.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/class_students.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/class_ten.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/class_ten.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/duplicate_admission_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/duplicate_admission_form.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/school_classes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/school_classes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/teachers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/teachers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/views/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/wizard/class_ten_wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/wizard/class_ten_wizard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radical_school/wizard/class_ten_wizard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/radical_school/wizard/class_ten_wizard.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ID5yE7E04z7FJbMCWzG9JT4SoC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11164807-02ff-4224-ac0c-4d9cacc3ba3b" name="Changes" comment="" />
+      <created>1669703566174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669703566174</updated>
+    </task>
+    <servers />
+  </component>
+</project>
